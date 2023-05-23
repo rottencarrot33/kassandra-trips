@@ -46,23 +46,4 @@ var clickInterval = setInterval(simulateClick, interval);
 
 
 
-//**** FULL SCREEN ****
-
-// Find the button element
-var fullscreenButton = document.getElementById('fullscreen-button');
-
-// Add click event listener to the button
-fullscreenButton.addEventListener('click', function () {
-    // Enter full-screen mode
-    var docElement = document.documentElement;
-    if (docElement.requestFullscreen) {
-        docElement.requestFullscreen();
-    } else if (docElement.mozRequestFullScreen) {
-        docElement.mozRequestFullScreen();
-    } else if (docElement.webkitRequestFullscreen) {
-        docElement.webkitRequestFullscreen();
-    } else if (docElement.msRequestFullscreen) {
-        docElement.msRequestFullscreen();
-    }
-});
 
