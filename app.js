@@ -23,6 +23,9 @@ setTimeout(refreshPage, 30 * 60 * 1000);
 
 
 
+
+// **** NO DIMMING ****
+
 // Function to simulate a click event on the document body
 function simulateClick() {
     var event = new MouseEvent('click', {
@@ -38,3 +41,28 @@ var interval = 15 * 60 * 1000; // 15 minutes
 
 // Set up the interval to simulate the click
 var clickInterval = setInterval(simulateClick, interval);
+
+
+
+
+
+//**** FULL SCREEN ****
+
+// Find the button element
+var fullscreenButton = document.getElementById('fullscreen-button');
+
+// Add click event listener to the button
+fullscreenButton.addEventListener('click', function () {
+    // Enter full-screen mode
+    var docElement = document.documentElement;
+    if (docElement.requestFullscreen) {
+        docElement.requestFullscreen();
+    } else if (docElement.mozRequestFullScreen) {
+        docElement.mozRequestFullScreen();
+    } else if (docElement.webkitRequestFullscreen) {
+        docElement.webkitRequestFullscreen();
+    } else if (docElement.msRequestFullscreen) {
+        docElement.msRequestFullscreen();
+    }
+});
+
