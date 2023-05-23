@@ -20,3 +20,21 @@ function refreshPage() {
 }
 
 setTimeout(refreshPage, 30 * 60 * 1000);
+
+
+
+// Function to simulate a click event on the document body
+function simulateClick() {
+    var event = new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+    });
+    document.body.dispatchEvent(event);
+}
+
+// Interval in milliseconds at which to simulate the click
+var interval = 15 * 60 * 1000; // 15 minutes
+
+// Set up the interval to simulate the click
+var clickInterval = setInterval(simulateClick, interval);
